@@ -7,19 +7,17 @@ import { Button } from "bootstrap";
 import ScrollToTop from "react-scroll-to-top";
 import { FaArrowUp } from "react-icons/fa";
 
-
 export default function Projects() {
   const [activeImageIndices, setActiveImageIndices] = useState(
     projects.reduce((acc, project) => {
       acc[project.id] = 0;
       return acc;
-    }, {})
+    }, {}),
   );
 
   useEffect(() => {
     AOS.init({ duration: 900, once: true, mirror: false });
   }, []);
-
 
   const handlePrevImage = (projectId, totalImages) => {
     setActiveImageIndices((prev) => ({
@@ -44,12 +42,17 @@ export default function Projects() {
       </button>
       <div className="container">
         {/* Section Header */}
-        <div className="projects-header" data-aos="fade-up" data-aos-duration="800">
+        <div
+          className="projects-header"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           <h1 className="projects-title">
             My <span className="title-highlight">Projects</span>
           </h1>
           <p className="projects-subtitle">
-            Exploring ideas, solving problems, and building solutions that make an impact
+            Exploring ideas, solving problems, and building solutions that make
+            an impact
           </p>
         </div>
 
@@ -192,15 +195,18 @@ export default function Projects() {
         </div>
 
         {/* CTA Section */}
-        <div className="projects-cta" data-aos="fade-up" data-aos-duration="800">
+        <div
+          className="projects-cta"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           <h2>More projects coming soon</h2>
-          <p>I'm constantly working on new and exciting projects. Stay tuned!</p>
+          <p>
+            I'm constantly working on new and exciting projects. Stay tuned!
+          </p>
         </div>
       </div>
-     <ScrollToTop
-      smooth
-      component={<FaArrowUp />}
-    />
+      <ScrollToTop smooth component={<FaArrowUp />} />
     </section>
   );
 }

@@ -1,4 +1,3 @@
-
 const hobbies = [
   {
     icon: (
@@ -62,34 +61,44 @@ const hobbies = [
   },
 ];
 
-
-
-export default function Hobbies (){
-    return(
+export default function Hobbies() {
+  return (
     <section id="hobbies" className="section">
       <div className="container">
         <div className="hobbies-grid">
           <div className="hobbies-title">
-            <h2 className="section-title" data-aos="fade-right" data-aos-duration="1000">HOBBIES</h2>
+            <h2
+              className="section-title"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              HOBBIES
+            </h2>
           </div>
           <div className="hobbies-content">
             {hobbies.map((item, index) => (
-
-            <div className="hobby-card" data-aos="fade-right" data-aos-duration="1000" key={index}>
-              <div className="hobby-icon">{item.icon}</div>
-              <div className="hobby-content">
-                <h3 className="hobby-title" data-aos="fade-down" data-aos-duration="1000">{item.hobby}</h3>
-                <p className="hobby-description">{item.description}</p>
+              <div
+                className="hobby-card"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+                key={index}
+              >
+                <div className="hobby-icon">{item.icon}</div>
+                <div className="hobby-content">
+                  <h3
+                    className="hobby-title"
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                  >
+                    {item.hobby}
+                  </h3>
+                  <p className="hobby-description">{item.description}</p>
+                </div>
               </div>
-            </div>
-
             ))}
-
-
           </div>
         </div>
       </div>
     </section>
-
-    );
+  );
 }

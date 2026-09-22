@@ -1,18 +1,14 @@
-import { useEffect} from "react";
-import {Link} from "react-router-dom";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+export default function Hero() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
-export default function Hero() {  
-    
-    useEffect(()=>{
-        AOS.init({ duration: 1000 });
-    }, []);
-
-
-    return (
-
+  return (
     <section id="home" className="hero">
       <div className="container">
         <div className="hero-grid">
@@ -24,9 +20,10 @@ export default function Hero() {
             </h1>
             <p className="hero-subtitle"></p>
             <p className="hero-description">
-              
-               Interested in full stack development with experience in both frontend and backend technologies. Skilled in data analysis, 
-               database management, and AI, enabling the creation of intelligent, data-driven applications.
+              Interested in full stack development with experience in both
+              frontend and backend technologies. Skilled in data analysis,
+              database management, and AI, enabling the creation of intelligent,
+              data-driven applications.
             </p>
             <div className="hero-buttons">
               {/* onclick="window.location.href='./projects.html'" */}
@@ -36,19 +33,28 @@ export default function Hero() {
               </Link>
               {/* <button className="btn btn-secondary" onclick="window.location.href='#contact'">Contact me</button> */}
               <button
-                  className="btn btn-secondary"
-                  onClick={() => (window.location.href = "#contact")}
-                >
-                  Contact me
-                </button>
-
+                className="btn btn-secondary"
+                onClick={() => (window.location.href = "#contact")}
+              >
+                Contact me
+              </button>
 
               {/* <!-- <a href="#contact" className="nav-link">Contact me</a> --> */}
             </div>
           </div>
           <div className="hero-visual animate-scale-in">
             <div className="hero-circle">
-              <svg className="hero-icon" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                className="hero-icon"
+                width="120"
+                height="120"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <polyline points="16,18 22,12 16,6"></polyline>
                 <polyline points="8,6 2,12 8,18"></polyline>
               </svg>
@@ -59,6 +65,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-
-    );
+  );
 }
