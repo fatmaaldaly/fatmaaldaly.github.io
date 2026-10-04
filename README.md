@@ -2,7 +2,7 @@
 
 Personal software engineering portfolio built with React, React Router and Vite, deployed to GitHub Pages.
 
-Live: https://fatmaaldaly.github.io/personal-site/
+Live: https://fatmaaldaly.github.io/
 
 ## Run locally
 

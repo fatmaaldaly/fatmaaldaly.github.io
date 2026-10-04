@@ -30,7 +30,7 @@ function describe(repo) {
     (p) => p.links.github.toLowerCase().endsWith(`/${repo.name.toLowerCase()}`),
   );
   if (match) return match.tagline;
-  if (repo.name === "personal-site") return "The source code of this portfolio.";
+  if (repo.name === "personal-site" || repo.name === "fatmaaldaly.github.io") return "The source code of this portfolio.";
   return "Project repository";
 }
 
