@@ -1,66 +1,75 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { TbArrowRight, TbBrandGithub, TbBrandLinkedin } from "react-icons/tb";
+import { profile } from "../data/site";
 
 export default function Hero() {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
   return (
-    <section id="home" className="hero">
-      <div className="container">
-        <div className="hero-grid">
-          <div className="hero-text animate-fade-in">
-            <h1 className="hero-title">
-              FATMA
-              <br />
-              <span className="hero-title-gradient">ALDALY</span>
-            </h1>
-            <p className="hero-subtitle"></p>
-            <p className="hero-description">
-              Interested in full stack development with experience in both
-              frontend and backend technologies. Skilled in data analysis,
-              database management, and AI, enabling the creation of intelligent,
-              data-driven applications.
-            </p>
-            <div className="hero-buttons">
-              {/* onclick="window.location.href='./projects.html'" */}
-              {/* <button className="btn btn-primary"><Link to="/Projects" >View Projects</Link></button> */}
-              <Link to="/projects" className="btn btn-primary">
-                View Projects
-              </Link>
-              {/* <button className="btn btn-secondary" onclick="window.location.href='#contact'">Contact me</button> */}
-              <button
-                className="btn btn-secondary"
-                onClick={() => (window.location.href = "#contact")}
-              >
-                Contact me
-              </button>
+    <section id="home" className="hero" aria-labelledby="hero-title">
+      <div className="container hero-grid">
+        <div className="hero-text">
+          <p className="hero-status">
+            <span className="pulse" aria-hidden="true" />
+            Business Informatics graduate · open to opportunities
+          </p>
+          <h1 id="hero-title" className="hero-title">
+            Fatma Aldaly
+          </h1>
+          <p className="hero-role">
+            Aspiring <span className="text-gradient">Full-Stack Developer</span>
+          </p>
+          <p className="hero-intro">
+            I learn by building. I enjoy turning ideas into working
+            applications, digging into how things work behind the interface,
+            and getting a little better at software engineering with every
+            project.
+          </p>
 
-              {/* <!-- <a href="#contact" className="nav-link">Contact me</a> --> */}
-            </div>
+          <div className="hero-actions">
+            <Link to="/#projects" className="btn btn-primary">
+              View My Projects <TbArrowRight aria-hidden="true" />
+            </Link>
+            <Link to="/#contact" className="btn btn-ghost">
+              Contact Me
+            </Link>
           </div>
-          <div className="hero-visual animate-scale-in">
-            <div className="hero-circle">
-              <svg
-                className="hero-icon"
-                width="120"
-                height="120"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="16,18 22,12 16,6"></polyline>
-                <polyline points="8,6 2,12 8,18"></polyline>
-              </svg>
+
+          <ul className="hero-social" aria-label="Social links">
+            <li>
+              <a href={profile.github} target="_blank" rel="noopener noreferrer">
+                <TbBrandGithub aria-hidden="true" /> GitHub
+              </a>
+            </li>
+            <li>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                <TbBrandLinkedin aria-hidden="true" /> LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="hero-code" aria-hidden="true">
+          <div className="code-window">
+            <div className="code-titlebar">
+              <span className="dot" />
+              <span className="dot" />
+              <span className="dot" />
+              <span className="code-filename">fatma.ts</span>
             </div>
-            <div className="hero-decoration-1"></div>
-            <div className="hero-decoration-2"></div>
+            <pre className="code-body">
+              <code>
+                <span className="tk-key">const</span> <span className="tk-var">fatma</span> = {"{"}
+                {"\n"}  <span className="tk-prop">background</span>: <span className="tk-str">"Business Informatics"</span>,
+                {"\n"}  <span className="tk-prop">focus</span>: <span className="tk-str">"Full-stack web apps"</span>,
+                {"\n"}  <span className="tk-prop">stack</span>: [<span className="tk-str">"React"</span>, <span className="tk-str">"Next.js"</span>, <span className="tk-str">"Node.js"</span>, <span className="tk-str">"PostgreSQL"</span>],
+                {"\n"}  <span className="tk-prop">learning</span>: [<span className="tk-str">"system design"</span>, <span className="tk-str">"testing"</span>],
+                {"\n"}  <span className="tk-prop">approach</span>: <span className="tk-str">"learn by building"</span>,
+                {"\n"}  <span className="tk-prop">curious</span>: <span className="tk-bool">true</span>,
+                {"\n"}{"}"};
+                {"\n"}
+                {"\n"}<span className="tk-comment">{"// always shipping the next version"}</span>
+                {"\n"}<span className="tk-var">fatma</span>.<span className="tk-fn">build</span>(<span className="tk-str">"something useful"</span>);<span className="caret" />
+              </code>
+            </pre>
           </div>
         </div>
       </div>

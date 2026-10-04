@@ -1,56 +1,51 @@
-const experience = [
-  {
-    title: "Frontend Developer Intern",
-    company: "Intella",
-    date: "07/2026 - 09/2026",
-    responsibilities: [
-      "Developed frontend features using React, Next.js, TypeScript, and MUI.",
-      "Built and modified reusable UI components based on existing designs.",
-      "Implemented data fetching and integrated frontend features with APIs.",
-      "Used Git and GitHub for version control and Jira for Agile task management.",
-    ],
-  },
-  {
-    title: "Full Stack Data Scientist Intern",
-    company: "Fixed Solutions",
-    date: "05/2025 - 07/2025",
-    responsibilities: [
-      "Developed responsive web and mobile applications using React.js and React Native, ensuring optimal user experience across platforms. Integrated an AI model into the application for predictive features.",
-      "Built an AI agent with n8n for automated PDF invoice data extraction, improving workflow efficiency.",
-      "Applied CRISP-DM methodology for data analysis, delivering actionable insights through effective data preprocessing and modeling.",
-    ],
-  },
-];
+import SectionHeader from "./SectionHeader";
+import { experience } from "../data/site";
 
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="section"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
+    <section id="experience" className="section section-alt" aria-labelledby="experience-title">
       <div className="container">
-        <h2 className="section-title">EXPERIENCE</h2>
-        <div className="experience-grid">
-          {experience.map((item, index) => (
-            <div className="card" key={index}>
-              <div className="card-content">
-                <h3 className="card-title">{item.title}</h3>
-                <p className="card-subtitle">{item.company}</p>
-                <p className="card-date">{item.date}</p>
+        <SectionHeader
+          index="04"
+          label="Experience"
+          id="experience-title"
+          title="Where I've practiced."
+          intro="Internships where I worked on real products and learned from the teams around me."
+        />
 
-                <ul className="responsibility-list">
-                  {item.responsibilities.map((responsibility, idx) => (
-                    <li key={idx} className="responsibility-item">
-                      {responsibility}
+        <ol className="timeline">
+          {experience.map((item) => (
+            <li className="timeline-item reveal" key={item.company}>
+              <div className="timeline-marker" aria-hidden="true" />
+              <div className="timeline-date">{item.date}</div>
+              <article className="timeline-card">
+                <header>
+                  <h3>{item.role}</h3>
+                  <p className="timeline-company">{item.company}</p>
+                </header>
+                <p className="timeline-summary">{item.summary}</p>
+
+                <h4 className="mini-label">What I worked on</h4>
+                <ul className="check-list">
+                  {item.work.map((w) => (
+                    <li key={w}>{w}</li>
+                  ))}
+                </ul>
+
+                <h4 className="mini-label">What I learned</h4>
+                <p className="timeline-takeaway">{item.takeaway}</p>
+
+                <ul className="tag-list" aria-label="Technologies used">
+                  {item.tech.map((t) => (
+                    <li className="tag" key={t}>
+                      {t}
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
+              </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

@@ -1,21 +1,28 @@
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
-import Hero from "../components/Hero.jsx";
-import Education from "../components/Education.jsx";
-import Experience from "../components/Experience.jsx";
-import Hobbies from "../components/Hobbies.jsx";
-import Skills from "../components/Skills.jsx";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import FeaturedProjects from "../components/FeaturedProjects";
+import Experience from "../components/Experience";
+import Learning from "../components/Learning";
+import GitHubSection from "../components/GitHubSection";
+import Contact from "../components/Contact";
+import useReveal from "../hooks/useReveal";
+import usePageMeta from "../hooks/usePageMeta";
 
 export default function Home() {
+  useReveal("home");
+  usePageMeta();
+
   return (
-    <div>
-      <Navbar />
+    <>
       <Hero />
-      <Education />
-      <Experience />
+      <About />
       <Skills />
-      <Hobbies />
-      <Footer />
-    </div>
+      <FeaturedProjects />
+      <Experience />
+      <Learning />
+      <GitHubSection />
+      <Contact />
+    </>
   );
 }

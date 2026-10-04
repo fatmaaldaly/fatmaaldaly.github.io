@@ -1,37 +1,38 @@
-const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Python",
-  "React.js",
-  "Node.js",
-  "Next.js",
-  "SQL",
-  "Java",
-  "Git",
-  "Tailwind",
-  "PostgreSQL",
-  "TypeScript",
-  "React native",
-  "Tableau",
-  "Power BI",
-];
+import SectionHeader from "./SectionHeader";
+import { skillGroups } from "../data/site";
+import { iconMap } from "./icons";
 
 export default function Skills() {
   return (
-    <section id="skills" className="section section-alt">
+    <section id="skills" className="section section-alt" aria-labelledby="skills-title">
       <div className="container">
-        <h2 className="section-title">SKILLS</h2>
+        <SectionHeader
+          index="02"
+          label="Skills"
+          id="skills-title"
+          title="Tools I build with."
+          intro="Technologies I've used in projects and internships, grouped by where they fit in the stack."
+        />
+
         <div className="skills-grid">
-          {skills.map((skill, index) => (
-            <div
-              className="skill-item"
-              data-aos="zoom-in"
-              data-aos-delay="100"
-              key={index}
-            >
-              {skill}
-            </div>
+          {skillGroups.map((group) => (
+            <article className="skill-group reveal" key={group.title}>
+              <header>
+                <h3>{group.title}</h3>
+                <p>{group.description}</p>
+              </header>
+              <ul className="skill-list">
+                {group.items.map(({ name, icon }) => {
+                  const Icon = iconMap[icon];
+                  return (
+                    <li className="skill-chip" key={name}>
+                      {Icon && <Icon aria-hidden="true" />}
+                      {name}
+                    </li>
+                  );
+                })}
+              </ul>
+            </article>
           ))}
         </div>
       </div>
