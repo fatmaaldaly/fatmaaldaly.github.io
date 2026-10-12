@@ -119,7 +119,7 @@ export const projects = [
     ],
     images: [E1],
     links: {
-      live: "",
+      live: "https://e-commerce-site-2rl6.vercel.app",
       github: "https://github.com/fatmaaldaly/e-commerce-site",
     },
   },
@@ -167,7 +167,7 @@ export const projects = [
     ],
     images: [A1, A2, A3, A4],
     links: {
-      live: "",
+      live: "https://admin-dashboard-six-zeta-71.vercel.app",
       github: "https://github.com/fatmaaldaly/admin-dashboard",
     },
   },
